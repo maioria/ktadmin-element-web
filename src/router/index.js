@@ -103,6 +103,35 @@ export const asyncRoutes = [
         }
       }
     ]
+  },
+  {
+    path: '/monitor',
+    component: Layout,
+    meta: {
+      icon: 'el-icon-s-tools',
+      authorities: ['monitor'],
+      title: '系统监控'
+    },
+    children: [
+      {
+        path: 'online',
+        component: () => import('@/views/monitor/online/index'),
+        meta: {
+          icon: 'el-icon-s-tools',
+          title: '在线用户',
+          authorities: ['monitor:online']
+        }
+      },
+      {
+        path: 'log',
+        component: () => import('@/views/monitor/log/index'),
+        meta: {
+          icon: 'el-icon-s-tools',
+          title: '操作日志',
+          authorities: ['monitor:log']
+        }
+      }
+    ]
   }
 ]
 

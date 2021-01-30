@@ -11,8 +11,8 @@
     @open="handleOpen"
   >
     <el-form ref="form" :model="data" :rules="rules" label-width="80px">
-      <el-form-item label="姓名" prop="name">
-        <el-input v-model="data.name" placeholder="请输入名称" />
+      <el-form-item label="姓名" prop="nickname">
+        <el-input v-model="data.nickname" placeholder="请输入名称" />
       </el-form-item>
       <el-form-item label="部门" prop="depId">
         <department-input
@@ -73,7 +73,7 @@ export default {
       roleList: [],
       data: {
         username: '',
-        name: '',
+        nickname: '',
         mobile: '',
         tel: '',
         email: '',
@@ -82,7 +82,7 @@ export default {
         depId: null
       },
       rules: {
-        name: [
+        nickname: [
           { required: true, message: '请输入姓名', trigger: 'blur' },
           { min: 2, max: 20, message: '长度在2-10个字符', trigger: 'blur' }
         ],

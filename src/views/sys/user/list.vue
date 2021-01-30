@@ -41,7 +41,7 @@
         <el-table-column
           label="姓名"
           width="100"
-          prop="name"
+          prop="nickname"
           show-tooltip-when-overflow
         />
         <el-table-column
@@ -83,18 +83,21 @@
         >
           <template slot-scope="scope">
             <el-button
+              v-if="scope.row.username!=='admin'"
               type="primary"
               icon="el-icon-edit"
               size="mini"
               @click="edit(scope.row.id)"
             />
             <el-button
+              v-if="scope.row.username!=='admin'"
               type="primary"
               icon="el-icon-delete"
               size="mini"
               @click="delUser(scope.row.id)"
             />
             <el-button
+              v-if="scope.row.username!=='admin'"
               type="primary"
               size="mini"
               @click="resetPasswordMethod(scope.row.id)"

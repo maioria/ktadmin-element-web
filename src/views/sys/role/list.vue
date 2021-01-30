@@ -43,8 +43,17 @@
         label="操作"
       >
         <template slot-scope="scope">
-          <el-button type="primary" icon="el-icon-edit" size="mini" @click="edit(scope.row.id)" />
           <el-button
+
+            v-if="scope.row.name!=='admin'"
+            type="primary"
+            icon="el-icon-edit"
+            size="mini"
+            @click="edit(scope.row.id)"
+          />
+          <el-button
+
+            v-if="scope.row.name!=='admin'"
             type="primary"
             icon="el-icon-delete"
             class="del-btn"

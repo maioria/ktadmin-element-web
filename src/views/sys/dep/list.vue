@@ -51,7 +51,7 @@
         <el-table-column
           header-align="center"
           align="center"
-          width="185"
+          width="125"
           class-name="operate-group"
           label="操作"
         >
@@ -62,59 +62,22 @@
                 icon="el-icon-edit"
                 size="mini"
                 @click="edit(scope.row.id)"
-              >
-                编辑
-              </el-button>
+              />
               <el-button
                 v-if="scope.row.status==='DISABLED'"
                 type="primary"
                 icon="el-icon-circle-check"
                 size="mini"
                 @click="active(scope.row.id)"
-              >
-                激活
-              </el-button>
+              />
               <el-button
                 v-if="scope.row.status==='NORMAL'"
                 type="primary"
                 icon="el-icon-circle-close"
                 size="mini"
                 @click="disabled(scope.row.id)"
-              >
-                冻结
-              </el-button>
+              />
             </div>
-            <!--            <el-popover placement="right" trigger="hover">-->
-            <!--              <div class="user-operation-group">-->
-            <!--                <el-button-->
-            <!--                  type="primary"-->
-            <!--                  icon="el-icon-edit"-->
-            <!--                  size="mini"-->
-            <!--                  @click="edit(scope.row.id)"-->
-            <!--                >-->
-            <!--                  编辑-->
-            <!--                </el-button>-->
-            <!--                <el-button-->
-            <!--                  v-if="scope.row.status==='DISABLED'"-->
-            <!--                  type="primary"-->
-            <!--                  icon="el-icon-circle-check"-->
-            <!--                  size="mini"-->
-            <!--                  @click="active(scope.row.id)"-->
-            <!--                >-->
-            <!--                  激活-->
-            <!--                </el-button>-->
-            <!--                <el-button-->
-            <!--                  v-if="scope.row.status==='NORMAL'"-->
-            <!--                  type="primary"-->
-            <!--                  icon="el-icon-circle-close"-->
-            <!--                  size="mini"-->
-            <!--                  @click="disabled(scope.row.id)"-->
-            <!--                >-->
-            <!--                  冻结-->
-            <!--                </el-button>-->
-            <!--              </div>-->
-            <!--              <el-button slot="reference" type="primary" icon="el-icon-arrow-right" size="mini" />-->
-            <!--            </el-popover>-->
           </template>
         </el-table-column>
       </el-table>
