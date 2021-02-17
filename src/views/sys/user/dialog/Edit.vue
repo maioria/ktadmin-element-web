@@ -32,6 +32,13 @@
       <el-form-item label="邮箱" prop="email">
         <el-input v-model="data.email" />
       </el-form-item>
+      <el-form-item label="入职时间" prop="entryDate">
+        <el-date-picker
+          v-model="data.entryDate"
+          type="date"
+          placeholder="选择日期"
+        />
+      </el-form-item>
       <el-form-item label="角色" prop="roles">
         <el-checkbox-group v-model="data.roles" v-loading="roleLoading">
           <el-checkbox v-for="item in roleList" :key="item.name" :label="item.name" name="type">
@@ -77,6 +84,7 @@ export default {
         mobile: '',
         tel: '',
         email: '',
+        entryDate: null,
         rank: '',
         roles: [],
         depId: null
@@ -94,6 +102,9 @@ export default {
         ],
         depId: [
           { type: 'number', required: true, message: '请选择部门', trigger: 'change' }
+        ],
+        entryDate: [
+          { required: true, message: '请选择入职时间', trigger: 'change' }
         ],
         mobile: [
           { required: true, message: '请输入手机号', trigger: 'blur' },
